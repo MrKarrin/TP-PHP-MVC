@@ -1,1 +1,66 @@
-﻿
+﻿body{
+    margin: 0px;
+    box-sizing: border-box;
+    background-color: #77B254;
+}
+
+/* Styles de la barre de navigation */
+nav {
+    background-color: #B99470;
+    padding: 15px 20px;
+    margin-left: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 60%;
+}
+
+nav .navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 15px;
+    color: #fff;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+nav .navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 60px;
+    margin: 0 50px 0 0;
+    padding: 0;
+}
+
+nav .navbar-menu li {
+    display: inline;
+}
+
+nav .navbar-menu a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+nav .navbar-menu a:hover {
+    color: #FFEB00;
+    transform: translateY(3px);
+}
+
+/* Style responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav .navbar-menu {
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 5px;
+    }
+}

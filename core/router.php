@@ -1,22 +1,23 @@
 ﻿<?php
 
-class Router{
+class Router
+{
 
     public static function redirect()
     {
-        $action = isset($_GET['action']) ? $_GET['action'] : 'index';
+        $page = isset($_GET['page']) ? $_GET['page'] : 'home';
         $id = isset($_GET['id']) ? (int)$_GET['id'] : null;
 
-        switch($action) {
+        switch ($page) {
 
-            case 'index' :
-                $postController = new PostController($this->pdo); // On utilise $this->pdo pour accéder à la connexion
-                $postController->index();
+            case 'home':
+                //$postController = new PostController;
+                //$postController->index();
                 break;
-                default:
-                    echo 'Page not found';
-                    break;
-            }
+                
+            default:
+                echo 'Page not found';
+                break;
         }
     }
 }
