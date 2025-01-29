@@ -1,5 +1,5 @@
 ﻿<?php 
-class Admin{
+class Orders{
     
 }
 ?>
