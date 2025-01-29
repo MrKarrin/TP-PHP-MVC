@@ -2,7 +2,6 @@
 class Orders
 {
 
-
     private $id_order;
     private $userid; /* à vérifier si besoin///////////////////////////////// */
     private $createdAt;
@@ -22,7 +21,6 @@ class Orders
     {
         return $this->id_order;
     }
-
 
 
     public function getUserid()
