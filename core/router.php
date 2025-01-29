@@ -4,13 +4,15 @@ class Router{
 
     public static function redirect()
     {
-        if (isset($_GET['page'])) {
-            switch ($_GET['page']) {
+        $action = isset($_GET['action']) ? $_GET['action'] : 'index';
+        $id = isset($_GET['id']) ? (int)$_GET['id'] : null;
 
-                case 'login':
-                   // $controller = new UserController();
-                   // $controller->login();
-                    break;
+        switch($action) {
+
+            case 'index' :
+                $postController = new PostController($this->pdo); // On utilise $this->pdo pour accéder à la connexion
+                $postController->index();
+                break;
                 default:
                     echo 'Page not found';
                     break;
