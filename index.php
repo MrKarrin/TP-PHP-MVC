@@ -9,7 +9,9 @@
 </head>
 <body>
 <?php 
+require_once("./assets/components/footer.php");
 
+require_once("./assets/components/header.php");
 ?>
 </body>
 </html>
