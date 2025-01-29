@@ -1,56 +1,52 @@
-﻿<?php 
-class Orders{
-    
-    private $name;
-    private $email;
-    private $password;
+﻿<?php
+class Orders
+{
 
-    public function __construct($name, $email, $password)
+
+    private $id_order;
+    private $userid; /* à vérifier si besoin///////////////////////////////// */
+    private $createdAt;
+    private $quantity_product;
+
+    public function __construct($id_order, $userid, $createdAt, $quantity_product)
     {
-        $this->name = $name;
-        $this->email = $email;
-        $this->password = $password;
-    }
 
-    public function getName()
-    {
-        return $this->name;
-    }
-
-
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
+        $this->id_order = $id_order;
+        $this->userid = $userid;
+        $this->createdAt = $createdAt;
+        $this->quantity_product = $quantity_product;
     }
 
 
-    public function getEmail()
+    public function getId_order()
     {
-        return $this->email;
+        return $this->id_order;
     }
 
 
-    public function setEmail($email)
-    {
-        $this->email = $email;
 
-        return $this;
+    public function getUserid()
+    {
+        return $this->userid;
     }
 
 
-    public function getPassword()
+    public function getCreatedAt()
     {
-        return $this->password;
+        return $this->createdAt;
     }
 
 
-    public function setPassword($password)
+    public function getQuantity_product()
     {
-        $this->password = $password;
+        return $this->quantity_product;
+    }
+
+
+    public function setQuantity_product($quantity_product)
+    {
+        $this->quantity_product = $quantity_product;
 
         return $this;
     }
 }
-?>

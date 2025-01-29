@@ -1,16 +1,25 @@
 ﻿<?php
 class Product
 {
+    private $id_product;
     private $name;
     private $price;
     private $category;
-    
-    public function __construct($name, $price, $category)
+
+    public function __construct($id_product, $name, $price, $category)
     {
+        $this->id_product = $id_product;
         $this->name = $name;
         $this->price = $price;
         $this->category = $category;
     }
+
+    
+    public function getId_product()
+    {
+        return $this->id_product;
+    }
+
 
     public function getName()
     {
@@ -52,7 +61,5 @@ class Product
 
         return $this;
     }
-    public function selectProduct() {
-        
-    }
+    public function selectProduct() {}
 }
