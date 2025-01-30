@@ -1,9 +1,4 @@
-﻿<style>
-    img {
-        max-height: 100px;
-    }
-</style>
-<main>
+﻿<main>
 
     <article>
 
@@ -11,12 +6,16 @@
 
         <div class="product">
             <?php
-            $first_fruits = array_slice($allproduct, 0, 6);
-            foreach ($first_fruits as $product): ?>
-                <?php if ($product['category'] == 'Fruits'): ?>
-                  
-                    <a href=""><img src="assets/img/fruits/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"></a>
-                <?php endif; ?>
+            $filtered_fruits = array_values(array_filter($allproduct, function ($allproduct) {
+                return $allproduct['category'] === 'Fruits';
+            }));
+
+            $first_fruits = array_slice($filtered_fruits, 0, 6);
+            ?>
+            <?php foreach ($first_fruits as $product): ?>
+                <a href="">
+                    <img src="assets/img/fruits/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
+                </a>
             <?php endforeach; ?>
         </div>
     </article>
@@ -24,13 +23,21 @@
 
     <article>
         <h2>Fruits</h2>
-        <?php
-        $last_fruits = array_slice($allproduct, 6, 12);
-        foreach ($last_fruits as $product): ?>
-            <?php if ($product['category'] == 'Fruits'): ?>
-                <a href=""><img src="assets/img/fruits/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"></a>
-            <?php endif; ?>
-        <?php endforeach; ?>
+        <div class="product">
+            <?php
+            $filtered_fruits = array_values(array_filter($allproduct, function ($allproduct) {
+                return $allproduct['category'] === 'Fruits';
+            }));
+
+
+            $first_fruits = array_slice($filtered_fruits, 6, 16);
+            ?>
+
+            <?php foreach ($first_fruits as $product): ?>
+                <a href="">
+                    <img src="assets/img/fruits/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
+                </a>
+            <?php endforeach; ?>
         </div>
 
     </article>
@@ -39,12 +46,17 @@
 
         <h2>Légumes</h2>
         <div class="product">
-            <?php
-            $first_vegetables = array_slice($allproduct, 10, 20);
-            foreach ($first_vegetables as $product): ?>
-                <?php if ($product['category'] == 'Légumes'): ?>
-                    <a href=""><img src="assets/img/vegetables/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"></a>
-                <?php endif; ?>
+        <?php
+            $filtered_fruits = array_values(array_filter($allproduct, function ($allproduct) {
+                return $allproduct['category'] === 'Légumes';
+            }));
+
+            $first_fruits = array_slice($filtered_fruits, 0, 6);
+            ?>
+            <?php foreach ($first_fruits as $product): ?>
+                <a href="">
+                    <img src="assets/img/vegetables/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
+                </a>
             <?php endforeach; ?>
 
         </div>
@@ -54,13 +66,19 @@
     <h2>Légumes</h2>
     <div class="slide_product">
 
-        <?php
-        $first_vegetables = array_slice($allproduct, 6, 24);
-        foreach ($first_vegetables as $product): ?>
-            <?php if ($product['category'] == 'Légumes'): ?>
-                <a href=""><img src="assets/img/vegetables/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"></a>
-            <?php endif; ?>
-        <?php endforeach; ?>
+    <?php
+            $filtered_fruits = array_values(array_filter($allproduct, function ($allproduct) {
+                return $allproduct['category'] === 'Légumes';
+            }));
+
+            $first_fruits = array_slice($filtered_fruits, 6, 999);
+            ?>
+            <?php foreach ($first_fruits as $product): ?>
+                <a href="">
+                    <img src="assets/img/vegetables/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
+                </a>
+            <?php endforeach; ?>
+
 
     </div>
 

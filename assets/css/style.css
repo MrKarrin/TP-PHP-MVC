@@ -81,6 +81,15 @@ main > article {
     padding-top: 25px;
     gap: 20px;
 }
+.product>a>img{
+    width: 150px;
+    height: 150px;
+}
+
+.slide_product>a>img{
+    width: 150px;
+    height: 150px;
+}
 
 img:hover {
     scale: 1.09;
