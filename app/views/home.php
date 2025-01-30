@@ -1,4 +1,4 @@
-<style>
+﻿<style>
     img {
         max-height: 100px;
     }
@@ -40,9 +40,9 @@
         <h2>Légumes</h2>
         <div class="product">
             <?php
-            $first_vegetables = array_slice($allproduct($product['category']), 0, 20);
+            $first_vegetables = array_slice($allproduct, 10, 20);
             foreach ($first_vegetables as $product): ?>
-                <?php if ($product['category'] === 'Légumes'): ?>
+                <?php if ($product['category'] == 'Légumes'): ?>
                     <a href=""><img src="assets/img/vegetables/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"></a>
                 <?php endif; ?>
             <?php endforeach; ?>
@@ -55,9 +55,9 @@
     <div class="slide_product">
 
         <?php
-        $first_vegetables = array_slice($allproduct, 6, 12);
+        $first_vegetables = array_slice($allproduct, 6, 24);
         foreach ($first_vegetables as $product): ?>
-            <?php if ($product['category'] === 'Légumes'): ?>
+            <?php if ($product['category'] == 'Légumes'): ?>
                 <a href=""><img src="assets/img/vegetables/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"></a>
             <?php endif; ?>
         <?php endforeach; ?>
