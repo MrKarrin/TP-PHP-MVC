@@ -1,4 +1,6 @@
-﻿<div class="profile">
+﻿<?php
+?>
+<div class="profile">
     <div class="cart">
         <h2>Mon Panier</h2>
         <ul>

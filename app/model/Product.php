@@ -22,21 +22,21 @@ class Product
         $sql = "SELECT * FROM product WHERE id_product=:id_product";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(['id_product' => $id]);
-        $product_id = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $product_id;
+        $product_by_id = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $product_by_id;
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public function createProduct($name, $price, $category, $images, $content)
     {
         $pdo = Database::connect();
-        $sql = "INSERT INTO product (name,	price, category, img, content) VALUE :name,	:price, :category, :images , :content";
+        $sql = "INSERT INTO product (name,	price, category, images, content) VALUE :name,	:price, :category, :images , :content";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             'name' => $name,
             'price' => $price,
             'category' => $category,
-            'img' => $images,
+            'images' => $images,
             'content' => $content
         ]);
     }
@@ -51,16 +51,17 @@ class Product
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public function updateProduct($name, $price, $category, $images, $id)
+    public function updateProduct($name, $price, $category, $imageToUpdate, $content, $id)
     {
         $pdo = Database::connect();
-        $sql = "UPDATE product  SET name=:name, price=:price, category=:category ,images=:images WHERE id=:id";
+        $sql = "UPDATE product  SET name=:name, price=:price, category=:category, images=:images, content=:content WHERE id_product=:id";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             'name' => $name,
             'price' => $price,
             'category' => $category,
-            'img' => $images,
+            'images' => $imageToUpdate,
+            'content' => $content,            
             'id' => $id
         ]);
     }

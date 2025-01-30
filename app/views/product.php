@@ -1,12 +1,19 @@
-﻿
-<div class="detail">
+﻿<div class="detail">
     <h1><?= htmlspecialchars($product['name']) ?></h1>
     <section class="pricing">
-    <?php if ($product['category'] === 'Fruits'): ?>
-            <img src="assets/img/fruits/<?= htmlspecialchars($product['images']) ?>">
+        <?php if ($product['category'] === 'Fruits'): ?>
+            <?php if (isset($product['images'])): ?>
+                <img src="assets/img/fruits/<?= htmlspecialchars($product['images']) ?>">
+            <?php else: ?>
+                <img src="/assets/img/public/no-image.png" alt="Pas d'image disponible">
+            <?php endif; ?>
         <?php endif; ?>
         <?php if (($product['category']) === 'Légumes'): ?>
-            <img src="assets/img/vegetables/<?= htmlspecialchars($product['images']) ?>">
+            <?php if (isset($product['images'])): ?>
+                <img src="assets/img/vegetables/<?= htmlspecialchars($product['images']) ?>">
+            <?php else: ?>
+                <img src="/assets/img/public/no-image.png" alt="Pas d'image disponible">
+            <?php endif; ?>
         <?php endif; ?>
         <div class="price">
             <h2><?= htmlspecialchars($product['price']) ?>€</h2>

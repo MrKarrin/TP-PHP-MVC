@@ -29,7 +29,8 @@ class Router
                 $editproduct->editProduct($id);
                 break;
             case 'login':
-                require_once("./app/views/login.php");
+                $userlogin = new UserController();
+                $userlogin->UserLogin();
                 break;
             case 'register':
                 require_once("./app/views/register.php");

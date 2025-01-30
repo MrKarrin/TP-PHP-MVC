@@ -21,18 +21,62 @@ class ProductController
     public function selectProduct($id)
     {
         $productmodel = new Product();
-        $product=$productmodel->getProduct($id);
+        $product = $productmodel->getProduct($id);
         require "./app/views/product.php";
     }
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public function editProduct($id)
     {
         $productmodel = new Product();
-        $product=$productmodel->getProduct($id);
+        $product = $productmodel->getProduct($id);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // var_dump($_POST);
+            // var_dump($_FILES);
+            // exit;
+            $name = trim($_POST['name'] ?? $product['name']);
+            $price = trim($_POST['price'] ?? $product['price']);
+            $category = trim($_POST['category'] ?? $product['category']);
+            $content = trim($_POST['content'] ?? $product['content']);
+        
+            $images = null;
+            if (isset($_FILES['images']) && $_FILES['images']['error'] === UPLOAD_ERR_OK) {
+                $uploadir = match ($category) {
+                    'Fruits' => './assets/img/fruits/',
+                    'Légumes' => './assets/img/vegetables/',
+                    default => './assets/img/public/',
+                };
+
+                if (!is_dir($uploadir)) {
+                    mkdir($uploadir, 0777, true);
+                }
+                $images = uniqid() . '-' . basename($_FILES['images']['name']);
+                $imagePath = $uploadir . $images;
+                if (!move_uploaded_file($_FILES['images']['tmp_name'], $imagePath)) {
+                    echo "error";
+                    $imagePath = null;
+                }
+            }
+            $imageToUpdate = $images ?: $product['images'];
+            if (isset($name) && isset($price) && isset($category) && isset($content)) {
+                $updateProductModel = new Product();
+                $updateProductModel->updateProduct(
+                    $name,
+                    $price,
+                    $category,
+                    $imageToUpdate,
+                    $content,
+                    $id
+                );
+            }
+            header('location: ./index.php');
+            exit;
+        }
         require "./app/views/edit.php";
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public function createProduct()
+    public function createProduct($name, $price, $category, $images, $content)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $name = trim($_POST['name']);
@@ -42,12 +86,11 @@ class ProductController
 
             $images = null;
             if (isset($_FILES['images']) && $_FILES['images']['error'] === UPLOAD_ERR_OK) {
-                if ($category == 'Fruits') {
-                    $uploadir = './assets/img/fruits/';
-                }
-                if ($category == 'Légumes') {
-                    $uploadir = './assets/img/vegetables';
-                }
+                $uploadir = match ($category) {
+                    'Fruits' => './assets/img/fruits/',
+                    'Légumes' => './assets/img/vegetables/',
+                    default => './assets/img/public/',
+                };
 
                 if (!is_dir($uploadir)) {
                     mkdir($uploadir, 0777, true);
@@ -64,8 +107,9 @@ class ProductController
                 $addproduct = $addproductmodel->createProduct($name, $price, $category, $images, $content);
             }
         }
-        require "./app/views/edit.php";
+        //require "./app/views/edit.php";
     }
+
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public function DeleteProduct($id)
