@@ -35,7 +35,7 @@
             ?>
 
             <?php foreach ($first_fruits as $product): ?>
-                <a href="">
+                <a href="index.php?page=product&id=<?= htmlspecialchars($product['id_product']) ?>">
                     <img src="assets/img/fruits/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
                 </a>
             <?php endforeach; ?>
@@ -55,7 +55,7 @@
             $first_fruits = array_slice($filtered_fruits, 0, 6);
             ?>
             <?php foreach ($first_fruits as $product): ?>
-                <a href="">
+                <a href="index.php?page=product&id=<?= htmlspecialchars($product['id_product']) ?>">
                     <img src="assets/img/vegetables/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
                 </a>
             <?php endforeach; ?>
@@ -75,7 +75,7 @@
         $first_fruits = array_slice($filtered_fruits, 6, 999);
         ?>
         <?php foreach ($first_fruits as $product): ?>
-            <a href="">
+            <a href="index.php?page=product&id=<?= htmlspecialchars($product['id_product']) ?>">
                 <img src="assets/img/vegetables/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
             </a>
         <?php endforeach; ?>

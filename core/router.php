@@ -20,18 +20,25 @@ class Router
                 $selectaproduct = new ProductController();
                 $selectaproduct->selectProduct($id);
                 break;
+            case 'dashboard':
+                $selectallproduct = new ProductController();
+                $selectallproduct->selectAllDashboard();
+                break;
+            case 'edit':
+                $editproduct = new ProductController();
+                $editproduct->editProduct($id);
+                break;
             case 'login':
                 require_once("./app/views/login.php");
                 break;
             case 'register':
                 require_once("./app/views/register.php");
                 break;
-            case 'dashboard':
-                require_once("./app/views/dashboard.php");
+            case 'orders':
+                require_once("./app/views/profile.php");
                 break;
-            case 'edit':
-                require_once("./app/views/edit.php");
-                break;
+
+
 
             default:
                 echo 'Page not found';

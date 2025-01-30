@@ -54,7 +54,7 @@ class Product
     public function updateProduct($name, $price, $category, $images, $id)
     {
         $pdo = Database::connect();
-        $sql = "UPDATE product  SET name=:name, price=:price, category=:category ,images=:imagese WHERE id=:id";
+        $sql = "UPDATE product  SET name=:name, price=:price, category=:category ,images=:images WHERE id=:id";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             'name' => $name,

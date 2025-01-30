@@ -1,3 +1,3 @@
 ﻿<footer>
-    <p>&copy; 2025 Bio Village. Tous droits réservés.</p>
+    <p>&copy; 2025 EXO Village. Tous droits réservés.</p>
 </footer>

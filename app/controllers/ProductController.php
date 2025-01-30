@@ -8,16 +8,28 @@ class ProductController
     public function selectAllProduct()
     {
         $allproductmodel = new Product();
-        $allproduct=$allproductmodel->getAllProduct();
+        $allproduct = $allproductmodel->getAllProduct();
         require "./app/views/home.php";
     }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public function selectProduct($id)
-        {
-            $productmodel = new Product();
-            $productmodel->getProduct($id);
-            require "./app/views/product.php";
-        }
+    public function selectAllDashboard()
+    {
+        $allproductmodel = new Product();
+        $allproduct = $allproductmodel->getAllProduct();
+        require "./app/views/dashboard.php";
+    }
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public function selectProduct($id)
+    {
+        $productmodel = new Product();
+        $product=$productmodel->getProduct($id);
+        require "./app/views/product.php";
+    }
+    public function editProduct($id)
+    {
+        $productmodel = new Product();
+        $product=$productmodel->getProduct($id);
+        require "./app/views/edit.php";
+    }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public function createProduct()
@@ -47,107 +59,21 @@ class ProductController
                     $imagePath = null;
                 }
             }
-            if (isset($name) && (isset($price)) && (isset($category)) && (isset($images))&& (isset($content))) {
+            if (isset($name) && (isset($price)) && (isset($category)) && (isset($images)) && (isset($content))) {
                 $addproductmodel = new Product();
-                $addproduct=$addproductmodel->createProduct($name, $price, $category, $images, $content);
+                $addproduct = $addproductmodel->createProduct($name, $price, $category, $images, $content);
             }
         }
+        require "./app/views/edit.php";
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public function DeleteProduct($id)
     {
         $delete_productModel = new Product();
-        $delete_product=$delete_productModel->deleteProductById($id);
+        $delete_product = $delete_productModel->deleteProductById($id);
         require "./app/views/home.php";
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    private $id_product;
-    private $name;
-    private $price;
-    private $category;
-
-    public function __construct() {}
-
-
-    public function getId_product()
-    {
-        return $this->id_product;
-    }
-
-
-    public function getName()
-    {
-        return $this->name;
-    }
-
-
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-
-    public function setPrice($price)
-    {
-        $this->price = $price;
-
-        return $this;
-    }
-
-
-    public function getCategory()
-    {
-        return $this->category;
-    }
-
-
-    public function setCategory($category)
-    {
-        $this->category = $category;
-
-        return $this;
-    }
 }

@@ -91,7 +91,7 @@ main > article {
     height: 150px;
 }
 
-img:hover {
+main img:hover {
     scale: 1.09;
 }
 
@@ -187,6 +187,10 @@ footer {
 .dashboard{
     color: #fff;
     text-align: center;
+}
+.dashboard img{
+    width: 50px;
+    height: 50px;
 }
 .dashboard>ul{
     margin: 0px;
@@ -295,6 +299,233 @@ footer {
 .edit_product button:hover {
     background-color: #E5D000;
 }
+
+/* PAGE product */
+
+.detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #B99470;
+    color: white;
+    text-shadow: 3px 2px 2px rgba(0,0,0,0.31);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.detail img{
+    width: 500px;
+    height: 500px;
+}
+
+
+.pricing{
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+.add_cart{
+    background-color: #FFEB00;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+.add_cart:hover{
+    background-color: #E5D000;
+}
+
+
+.buy{
+    background-color: #7afd00;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.buy:hover{
+    background-color: #60c205;
+}
+.quantity-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.quantity-input {
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+}
+
+/* profile */
+
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    gap: 30px;
+}
+.cart{
+    background-color: #c5460bc9;
+    color: white;
+    padding:20px;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+    
+}
+.cart>ul>img{
+    width: 50px;
+    height: 50px;
+}
+.cart>ul>li{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 40px;
+    margin-top: 20px;
+    background-color: #63330c;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+.acount{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #09bbbb91;
+    color: white;
+    padding:20px;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+}
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+}
+
+.form-container h2 {
+    color: #09bbbb;
+    margin-bottom: 20px;
+}
+
+/* Styles spécifiques au formulaire */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container .form-group {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-container label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #09bbbb91;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="password"]:focus {
+    border-color: #088a8a;
+    box-shadow: 0 0 5px rgba(9, 187, 187, 0.5);
+}
+
+/* Bouton de soumission */
+.form-container .submit-btn {
+    background-color: #09bbbb;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background 0.3s ease-in-out;
+}
+
+.form-container .submit-btn:hover {
+    background-color: #088a8a;
+}
+.history{
+    background-color: #c5da0aa1;
+    color: white;
+    padding:20px;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+}
+.history>ul>li{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 40px;
+    margin-top: 20px;
+    
+}
+
+.pay{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 50px;
+}
+
+
+
 
 
 /* Style responsive */
