@@ -72,7 +72,7 @@
             return $allproduct['category'] === 'Légumes';
         }));
 
-        $first_fruits = array_slice($filtered_fruits, 6, 999);
+        $first_fruits = array_slice($filtered_fruits, 6, 99999);
         ?>
         <?php foreach ($first_fruits as $product): ?>
             <a href="index.php?page=product&id=<?= htmlspecialchars($product['id_product']) ?>">
