@@ -1,4 +1,4 @@
-﻿<style>
+<style>
     img {
         max-height: 100px;
     }
@@ -13,7 +13,8 @@
             <?php
             $first_fruits = array_slice($allproduct, 0, 6);
             foreach ($first_fruits as $product): ?>
-                <?php if ($product['category'] === 'Fruits'): ?>
+                <?php if ($product['category'] == 'Fruits'): ?>
+                  
                     <a href=""><img src="assets/img/fruits/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"></a>
                 <?php endif; ?>
             <?php endforeach; ?>
@@ -26,7 +27,7 @@
         <?php
         $last_fruits = array_slice($allproduct, 6, 12);
         foreach ($last_fruits as $product): ?>
-            <?php if ($product['category'] === 'Fruits'): ?>
+            <?php if ($product['category'] == 'Fruits'): ?>
                 <a href=""><img src="assets/img/fruits/<?= htmlspecialchars($product['images']) ?>" alt="<?= htmlspecialchars($product['name']) ?>"></a>
             <?php endif; ?>
         <?php endforeach; ?>
