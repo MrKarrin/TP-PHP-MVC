@@ -15,7 +15,10 @@ class Router
             case 'home':
                 $selectallproduct = new ProductController();
                 $selectallproduct->selectAllProduct();
-                require_once("./app/views/home.php");
+                break;
+            case 'product':
+                $selectaproduct = new ProductController();
+                $selectaproduct->selectProduct($id);
                 break;
             case 'login':
                 require_once("./app/views/login.php");
@@ -23,7 +26,12 @@ class Router
             case 'register':
                 require_once("./app/views/register.php");
                 break;
-
+            case 'dashboard':
+                require_once("./app/views/dashboard.php");
+                break;
+            case 'edit':
+                require_once("./app/views/edit.php");
+                break;
 
             default:
                 echo 'Page not found';
