@@ -1,5 +1,5 @@
 ﻿<?php
-class Orders
+class OrdersController
 {
 
     private $id_order;
@@ -7,14 +7,7 @@ class Orders
     private $createdAt;
     private $quantity_product;
 
-    public function __construct($id_order, $userid, $createdAt, $quantity_product)
-    {
-
-        $this->id_order = $id_order;
-        $this->userid = $userid;
-        $this->createdAt = $createdAt;
-        $this->quantity_product = $quantity_product;
-    }
+    public function __construct() {}
 
 
     public function getId_order()

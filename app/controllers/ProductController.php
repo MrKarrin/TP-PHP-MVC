@@ -1,20 +1,14 @@
 ﻿<?php
-class Product
+class ProductController
 {
     private $id_product;
     private $name;
     private $price;
     private $category;
 
-    public function __construct($id_product, $name, $price, $category)
-    {
-        $this->id_product = $id_product;
-        $this->name = $name;
-        $this->price = $price;
-        $this->category = $category;
-    }
+    public function __construct() {}
 
-    
+
     public function getId_product()
     {
         return $this->id_product;
@@ -61,5 +55,8 @@ class Product
 
         return $this;
     }
-    public function selectProduct() {}
+    public function selectAllProduct() {
+
+        require"./app/views/home.php";
+    }
 }
