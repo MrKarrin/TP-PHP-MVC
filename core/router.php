@@ -1,5 +1,7 @@
 ﻿<?php
-
+require_once("./app/controllers/OrdersController.php");
+require_once("./app/controllers/ProductController.php");
+require_once("./app/controllers/UserController.php");
 class Router
 {
 
@@ -11,10 +13,18 @@ class Router
         switch ($page) {
 
             case 'home':
-                //$postController = new PostController;
-                //$postController->index();
+                $selectallproduct = new ProductController();
+                $selectallproduct->selectAllProduct();
+                require_once("./app/views/home.php");
                 break;
-                
+            case 'login':
+                require_once("./app/views/login.php");
+                break;
+            case 'register':
+                require_once("./app/views/register.php");
+                break;
+
+
             default:
                 echo 'Page not found';
                 break;

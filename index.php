@@ -1,4 +1,5 @@
 ﻿<?php
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -15,6 +16,8 @@
     require_once("./assets/components/header.php");
 
     require_once("./core/router.php");
+    $router =new Router();
+    $router->redirect();
 
     require_once("./assets/components/footer.php");
     

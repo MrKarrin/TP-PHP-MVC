@@ -9,7 +9,7 @@ class Database
     {
 
         if (!self::$instance) {
-            self::$instance = new PDO('mysql:host=localhost;dbname=gestion_de_commande;charset=utf8', 'root', '');
+            self::$instance = new PDO('mysql:host=localhost;dbname=gestion_de_commandes;charset=utf8', 'root', '');
         }
         return self::$instance;
     }

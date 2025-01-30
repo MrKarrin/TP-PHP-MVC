@@ -1,9 +1,11 @@
 ﻿<?php
+//require_once "./app/model/Orders.php";
+
 class OrdersController
 {
 
     private $id_order;
-    private $userid; /* à vérifier si besoin///////////////////////////////// */
+    private $user_id;
     private $createdAt;
     private $quantity_product;
 
@@ -18,7 +20,7 @@ class OrdersController
 
     public function getUserid()
     {
-        return $this->userid;
+        return $this->user_id;
     }
 
 

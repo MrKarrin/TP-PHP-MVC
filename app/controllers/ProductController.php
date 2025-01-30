@@ -1,6 +1,74 @@
 ﻿<?php
+require_once "./app/model/Product.php";
+
 class ProductController
 {
+
+    public function selectAllProduct()
+    {
+        $allproductmodel = new Product();
+        $allproduct= $allproductmodel->getAllProduct();
+        require "./app/views/home.php";
+    }
+    public function createProduct()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $name = trim($_POST['name']);
+            $price = trim($_POST['price']);
+            $category = trim($_POST['category']);
+
+            $images = null;
+            if (isset($_FILES['images']) && $_FILES['images']['error'] === UPLOAD_ERR_OK) {
+                $uploadir = './image/public/upload/';
+                if (!is_dir($uploadir)) {
+                    mkdir($uploadir, 0777, true);
+                }
+                $images = uniqid() . '-' . basename($_FILES['images']['name']);
+                $imagePath = $uploadir . $images;
+                if (!move_uploaded_file($_FILES['images']['tmp_name'], $imagePath)) {
+                    echo "error images post controle add ";
+                    $imagePath = null;
+                }
+            }
+            if (isset($name) && (isset($price)) && (isset($category)) && (isset($images))) {
+                $addproduct = new Product();
+                $addproduct->createProduct($name, $price, $category, $images);
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private $id_product;
     private $name;
     private $price;
@@ -54,9 +122,5 @@ class ProductController
         $this->category = $category;
 
         return $this;
-    }
-    public function selectAllProduct() {
-
-        require"./app/views/home.php";
     }
 }
