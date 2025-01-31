@@ -97,6 +97,7 @@ class UserController
             $name = $_POST['name'];
             $createuser = new User();
             $createuser = $createuser->CreateUser($name, $email, $password);
+            header('location: ./login.php');
         }
         require_once("./app/views/register.php");
     }

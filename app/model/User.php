@@ -30,13 +30,12 @@ class User
     public function CreateUser($name, $email, $password)
     {
         $pdo = Database::connect();
-        $sql = "INSERT INTO user (name,	email, password) VALUE :name, :email, :password";
+        $sql = "INSERT INTO user (name,	email, password) VALUE (:name, :email, :password)";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             'name' => $name,
             'email' => $email,
             'password' => $password
-
         ]);
     }
 
