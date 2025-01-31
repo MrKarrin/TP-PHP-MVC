@@ -18,12 +18,12 @@
         <div class="price">
             <h2><?= htmlspecialchars($product['price']) ?>€</h2>
             
-            <form action="index.php?page=orders" method="post">
+            <form action="" method="post">
                 <div class="quantity-container">
                     <input type="button" class="quantity-btn" value="-" onclick="this.nextElementSibling.stepDown()">
                     <input name="quantity-input" type="number" class="quantity-input" value="1" min="1">
                     <input type="button" class="quantity-btn" value="+" onclick="this.previousElementSibling.stepUp()">
-                    <input type="hidden" name="id_product" value="<?=$product['id_product'] ?>">
+                    <input name="id_product"type="hidden"value="<?=$product['id_product'] ?>">
                 </div>
                 <button class="add_cart" type="submit">Ajouter au panier</button>
             </form>

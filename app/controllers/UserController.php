@@ -59,4 +59,13 @@ class UserController
         }
         require "./app/views/dashboard.php";
     }
+    public function UserId()
+    {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        $user_id = $_SESSION['user_id'];
+        return $user_id;
+        require "./app/views/order.php";
+    }
 }

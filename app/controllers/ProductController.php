@@ -17,6 +17,19 @@ class ProductController
         $productmodel = new Product();
         $product = $productmodel->getProduct($id);
         require "./app/views/product.php";
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            $quantity_input = trim($_POST['quantity-input']);
+            $id_product = trim($_POST['id_product']);
+
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
+            $_SESSION['order'] = [
+                'quantity-input' => $quantity_input,
+                'id_product' => $id_product
+            ];
+        }
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -32,7 +45,7 @@ class ProductController
             $price = trim($_POST['price'] != '' ? $_POST['price'] : $product['price']);
             $category = trim($_POST['category'] != '' ? $_POST['category'] : $product['category']);
             $content = trim($_POST['content']  != '' ? $_POST['content'] : $product['content']);
-         
+
             $images = null;
             if (isset($_FILES['images']) && $_FILES['images']['error'] === UPLOAD_ERR_OK) {
                 $uploadir = match ($category) {
