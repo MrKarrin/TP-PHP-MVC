@@ -61,7 +61,7 @@ class UserController
     }
     public function UserId()
     {
-      
+
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
@@ -74,19 +74,30 @@ class UserController
             $user_id = $_SESSION['user_id'];
             $product = new Product();
             $product = $product->getAllProduct();
-           
+
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            
+
                 // $_SESSION['order'];
                 // $order= new order();
                 // $order= $order->order($_SESSION['user_id'],$_SESSION['order']);
                 // inserer ligne table order avec user id session 
                 // recup id commander inserer PDO (PDO lastInsertID()) 
                 // pour chaque produit session 
-                //     inser ligne table order list avec id pour id order et id produit sur qui bloucle
-                
+                // inser ligne table order list avec id pour id order et id produit sur qui bloucle
+
             }
         }
         require "./app/views/profile.php";
+    }
+    public function CreateUser()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $name = $_POST['name'];
+            $createuser = new User();
+            $createuser = $createuser->CreateUser($name, $email, $password);
+        }
+        require_once("./app/views/register.php");
     }
 }

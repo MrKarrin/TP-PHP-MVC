@@ -53,7 +53,7 @@ $order_list = [];
                 <h2><?= $totalprice ?>€</h2>
                 
                 <!-- <input type="hidden" name="order_list" value="<?php  ?>"> -->
-                 <?php print_r($order_list); ?>
+              
                 <button type="submit" class="buy">Acheter</button>
             </form>
         </div>

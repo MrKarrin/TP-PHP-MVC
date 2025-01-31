@@ -27,7 +27,7 @@ class User
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public function createuser($name, $email, $password)
+    public function CreateUser($name, $email, $password)
     {
         $pdo = Database::connect();
         $sql = "INSERT INTO user (name,	email, password) VALUE :name, :email, :password";

@@ -41,7 +41,8 @@ class Router
                 $user_orders->UserId();
                 break;
             case 'register':
-                require_once("./app/views/register.php");
+                $createuser = new UserController();
+                $createuser->CreateUser();
                 break;
 
             case 'add':
