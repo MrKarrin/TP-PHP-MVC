@@ -25,7 +25,7 @@ class ProductController
             if (session_status() === PHP_SESSION_NONE) {
                 session_start();
             }
-            $_SESSION['order'] = [
+            $_SESSION['order'][] = [
                 'quantity-input' => $quantity_input,
                 'id_product' => $id_product
             ];

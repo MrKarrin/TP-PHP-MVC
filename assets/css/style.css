@@ -552,12 +552,28 @@ footer {
     border-radius: 10px;
     
 }
+
+.cart img{
+    width: 80px;
+    height: 80px;
+    border: solid 1px #644f3a;
+    border-radius: 15px; 
+}
+
+.cart p{
+    min-width: 300px;
+    font-weight: bold;
+    text-shadow: 3px 2px 2px rgba(0,0,0,0.31);
+    text-align: center;
+}
+
 .cart>ul>img{
     width: 50px;
     height: 50px;
 }
 .cart>ul>li{
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
     gap: 40px;
     margin-top: 20px;
@@ -567,6 +583,12 @@ footer {
     border-radius: 10px;
 
 }
+
+.cart .delete_btn{
+    text-align: center;
+}
+
+
 .acount{
     display: flex;
     flex-direction: column;
@@ -591,7 +613,6 @@ footer {
     margin-bottom: 20px;
 }
 
-/* Styles spécifiques au formulaire */
 .form-container form {
     display: flex;
     flex-direction: column;
@@ -659,11 +680,22 @@ footer {
 .history>ul>li{
     display: flex;
     justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     gap: 40px;
     margin-top: 20px;
     padding: 10px;
     border: solid 1px #009900;
     background-color: #5a5a5a69;
+    
+}
+
+.history p{
+    min-width: 300px;
+    font-weight: bold;
+    text-shadow: 3px 2px 2px rgba(0,0,0,0.31);
+    text-align: center;
+    
     
 }
 
@@ -674,6 +706,15 @@ footer {
     gap: 50px;
 }
 
+.total_price{
+    text-decoration: none;
+    background-color: #B99470;
+    border: none;
+    font-weight: bold;
+    text-shadow: 3px 2px 2px rgba(0,0,0,0.31);
+    color: white;
+    font-size: 70px;
+}
 
 
 

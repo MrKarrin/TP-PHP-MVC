@@ -33,11 +33,14 @@ public function __construct() {}
         $sql = "SELECT * FROM product   
         JOIN order_list ON order_list.product_id = product.id_product
         JOIN orders ON orders.id_order = order_list.id_order
-        WHERE orders.id_order = 15";
+        WHERE orders.id_order = :id_order";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
-            'quantity_product' => $quantity_product
+            ':id_order' => 1
         ]);
+        
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

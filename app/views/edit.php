@@ -5,8 +5,6 @@
         <input type="text" placeholder="Nouveaux Nom" name="name">
         <label>Prix : <?= htmlspecialchars($product['price']) ?> €</label>
         <input type="text" placeholder="Nouveaux Prix" name="price">
-        <label>Categorie : <?= htmlspecialchars($product['category']) ?></label>
-        <input type="text" placeholder="Nouvelle Categorie" name="category'">
         <label>Description : <?= htmlspecialchars($product['content']) ?></label>
         <input type="text" placeholder="Nouvelle Description" name="content">
         <button type="submit">Envoyer</button>
