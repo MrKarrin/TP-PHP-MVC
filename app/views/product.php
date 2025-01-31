@@ -17,13 +17,16 @@
         <?php endif; ?>
         <div class="price">
             <h2><?= htmlspecialchars($product['price']) ?>€</h2>
-            <div class="quantity-container">
-                <input type="button" class="quantity-btn" value="-" onclick="this.nextElementSibling.stepDown()">
-                <input type="number" class="quantity-input" value="1" min="1">
-                <input type="button" class="quantity-btn" value="+" onclick="this.previousElementSibling.stepUp()">
-            </div>
-            <button class="add_cart">Ajouter au panier</button>
-            <button class="buy">Acheter</button>
+            
+            <form action="index.php?page=orders" method="post">
+                <div class="quantity-container">
+                    <input type="button" class="quantity-btn" value="-" onclick="this.nextElementSibling.stepDown()">
+                    <input name="quantity-input" type="number" class="quantity-input" value="1" min="1">
+                    <input type="button" class="quantity-btn" value="+" onclick="this.previousElementSibling.stepUp()">
+                    <input type="hidden" name="id_product" value="<?=$product['id_product'] ?>">
+                </div>
+                <button class="add_cart" type="submit">Ajouter au panier</button>
+            </form>
 
         </div>
     </section>

@@ -1,6 +1,9 @@
-﻿<div class="dashboard">
+﻿<?php
+
+?>
+<div class="dashboard">
     <h2>Produits</h2>
-    <button class="add_btn">Ajouter</button>
+    <button onclick="window.location.href ='index.php?page=add'" class="add_btn">Ajouter</button>
     <ul>
         <?php foreach ($allproduct as $product): ?>
             <li>

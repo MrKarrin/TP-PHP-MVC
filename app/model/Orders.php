@@ -5,7 +5,7 @@ class Order {
 public function __construct() {}
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public function getAllorders()
+    public function getAllOrders()
     {
         $pdo = Database::connect();
         $sql = 'SELECT * FROM orders';
@@ -16,7 +16,7 @@ public function __construct() {}
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public function getorder($id)
+    public function getOrder($id)
     {
         $pdo = Database::connect();
         $sql = "SELECT * FROM orders WHERE id_order=:id_order";
@@ -27,10 +27,14 @@ public function __construct() {}
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public function creatorder($quantity_product)
+    public function creatOrder($quantity_product)
     {
         $pdo = Database::connect();
-        $sql = "INSERT INTO orders (quantity_product) VALUE :quantity_product";
+        $sql = "SELECT * FROM product   
+        JOIN order_list ON order_list.product_id = product.id_product
+        JOIN orders ON orders.id_order = order_list.id_order
+        WHERE orders.id_order = 15,
+        INSERT INTO orders (quantity_product) VALUE :quantity_product";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             'quantity_product' => $quantity_product
@@ -38,7 +42,7 @@ public function __construct() {}
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public function deleteorderById($id)
+    public function deleteOrderById($id)
     {
         $pdo = Database::connect();
         $sql = "DELETE FROM orders WHERE id_order = :id_order";
@@ -49,7 +53,7 @@ public function __construct() {}
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public function updateorder($quantity_product)
+    public function updateOrder($quantity_product)
     {
         $pdo = Database::connect();
         $sql = "UPDATE orders  SET quantity_product=:quantity_product WHERE id_order=:id_order";

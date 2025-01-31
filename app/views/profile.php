@@ -19,9 +19,9 @@
         
     </div>
     <div class="acount">
-        <h2>Mes Informations</h2>
+        <h2>Modifier Profil</h2>
         <div class="form-container">
-            <h2>Modifier Profil</h2>
+            
             <form>
                 <div class="form-group">
                     <label for="name">Nom :</label>

@@ -11,12 +11,6 @@ class ProductController
         $allproduct = $allproductmodel->getAllProduct();
         require "./app/views/home.php";
     }
-    public function selectAllDashboard()
-    {
-        $allproductmodel = new Product();
-        $allproduct = $allproductmodel->getAllProduct();
-        require "./app/views/dashboard.php";
-    }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public function selectProduct($id)
     {
@@ -31,14 +25,14 @@ class ProductController
         $productmodel = new Product();
         $product = $productmodel->getProduct($id);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // var_dump($product);
             // var_dump($_POST);
-            // var_dump($_FILES);
             // exit;
-            $name = trim($_POST['name'] ?? $product['name']);
-            $price = trim($_POST['price'] ?? $product['price']);
-            $category = trim($_POST['category'] ?? $product['category']);
-            $content = trim($_POST['content'] ?? $product['content']);
-        
+            $name = trim($_POST['name'] != '' ? $_POST['name'] : $product['name']);
+            $price = trim($_POST['price'] != '' ? $_POST['price'] : $product['price']);
+            $category = trim($_POST['category'] != '' ? $_POST['category'] : $product['category']);
+            $content = trim($_POST['content']  != '' ? $_POST['content'] : $product['content']);
+         
             $images = null;
             if (isset($_FILES['images']) && $_FILES['images']['error'] === UPLOAD_ERR_OK) {
                 $uploadir = match ($category) {

@@ -3,21 +3,29 @@
     box-sizing: border-box;
     background-color: #77B254;
 }
+a{
+    text-decoration: none;
+}
 
 /* Styles de la barre de navigation */
 nav {
     background-color: #B99470;
     padding: 15px 20px;
-    margin-left: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 96%;
+    border: solid 1px #644f3a;
+    margin: 20px;
 }
 
+
 nav .navbar-logo>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 24px;
     font-weight: bold;
     margin-left: 15px;
@@ -25,6 +33,8 @@ nav .navbar-logo>a {
     text-transform: capitalize;
     letter-spacing: 1px;
     text-decoration: none;
+    text-align: center;
+    gap: 10px;
 }
 
 nav .navbar-menu {
@@ -53,7 +63,28 @@ nav .navbar-menu a:hover {
     transform: translateY(3px);
 }
 
+.navbar-logo>a>img{
+    height: 80px;
+    width: 80px;
+}
+
 /* home page */
+.about_us{
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    color: #fff;
+    font-size: larger;
+    background-color: #B99470;
+    text-shadow: 3px 2px 2px rgba(0,0,0,0.31);
+    border: solid 1px #644f3a;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; 
+}
+
+.about_us strong{
+    color:#FFEB00;
+}
 
 main {
     display: flex;
@@ -69,6 +100,7 @@ main > article {
     color: #fff;
     background-color: #B99470;
     text-shadow: 3px 2px 2px rgba(0,0,0,0.31);
+    border: solid 1px #644f3a;
     border-radius: 10px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
@@ -84,35 +116,41 @@ main > article {
 .product>a>img{
     width: 150px;
     height: 150px;
+    border-radius: 90px;
+    border: solid 1px #644f3a;
 }
 
 .slide_product>a>img{
     width: 150px;
     height: 150px;
+    border-radius: 90px;
+    border: solid 1px #644f3a;
 }
 
 main img:hover {
     scale: 1.09;
 }
+.slide_product>a>img:hover{
+    scale: 1.09;
+}
 
 
 .slide {
-    text-align: center;
-    color: #fff;
-    text-shadow: 3px 2px 2px rgba(0,0,0,0.31);
-}
-
-.slide_product {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
     background-color: #B99470;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-
+    border: solid 1px #644f3a;
+    color: white;
+    text-shadow: 3px 2px 2px rgba(0,0,0,0.31);
+    gap: 20px;
+    
 }
+
 
 footer {
     background-color: #B99470;
@@ -121,8 +159,8 @@ footer {
     padding: 15px 0;
     font-size: 16px;
     position: relative;
-    width: 100%;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border: solid 1px #644f3a;
 }
 .login-container {
     display: flex;
@@ -133,6 +171,7 @@ footer {
 
 .login-form {
     background-color: #B99470;
+    border: solid 1px #644f3a;
     padding: 20px;
     border-radius: 10px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -171,6 +210,7 @@ footer {
 
 .login-form button {
     background-color: #FFEB00;
+    border: solid 1px #ac9e07;
     color: #333;
     border: none;
     padding: 10px;
@@ -187,10 +227,13 @@ footer {
 .dashboard{
     color: #fff;
     text-align: center;
+    
 }
 .dashboard img{
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
+    border: solid 1px #644f3a;
+    border-radius: 15px;
 }
 .dashboard>ul{
     margin: 0px;
@@ -199,19 +242,33 @@ footer {
 .dashboard>ul>li{
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     margin: 10px;
     padding: 20px;
     background-color: #B99470;
+    border: solid 1px #644f3a;
 
+
+}
+
+.dashboard p{
+    min-width: 300px;
+    font-weight: bold;
+    text-shadow: 3px 2px 2px rgba(0,0,0,0.31);
+    text-align: center;
 }
 .add_btn {
     background-color: #FFEB00;
+    border: solid 1px #ada008;
+    width: 80px;
+    height: 80px;
     color: #333;
     border: none;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .add_btn:hover {
@@ -219,6 +276,8 @@ footer {
 }
 .edit_btn {
     background-color: #6200ff;
+    width: 80px;
+    height: 80px;
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -227,6 +286,7 @@ footer {
     padding: 10px 15px;
     cursor: pointer;
     transition: background-color 0.3s;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .edit_btn:hover {
@@ -234,6 +294,8 @@ footer {
 }
 .delete_btn {
     background-color: #D9534F;
+    width: 80px;
+    height: 80px;
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -242,6 +304,7 @@ footer {
     padding: 10px 15px;
     cursor: pointer;
     transition: background-color 0.3s;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .delete_btn:hover {
@@ -255,6 +318,15 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+.edit img{
+    width: 800px;
+    height: 600px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border: solid 1px #644f3a;
+    border-radius: 15px;
+    
+}
     
 
 .edit_product {
@@ -262,7 +334,8 @@ footer {
     padding: 20px;
     border-radius: 10px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    width: 50%;
+    width: 800px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -272,6 +345,7 @@ footer {
 .edit_product label {
     color: white;
     font-weight: bold;
+    text-shadow: 3px 2px 2px rgba(0,0,0,0.31);
 }
 
 .edit_product input {
@@ -287,6 +361,7 @@ footer {
 }
 .edit_product button {
     background-color: #FFEB00;
+    border: solid 1px #ac9e07;
     color: black;
     font-size: 16px;
     font-weight: bold;
@@ -299,6 +374,72 @@ footer {
 .edit_product button:hover {
     background-color: #E5D000;
 }
+/* ADD product */
+
+.add {
+    background-color: #B99470;
+    padding: 20px;
+    max-width: 500px;
+    
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 150px auto 150px;
+}
+
+
+.add_product {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add_product label {
+    font-weight: bold;
+    color: #fff;
+}
+
+.add_product input[type="text"],
+.add_product input[type="file"] {
+    padding: 8px;
+    border: 1px solid #77B254;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+
+.add_product input[type="text"]:focus {
+    border-color: #FFEB00;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 235, 0, 0.5);
+}
+
+
+.add_product input[type="radio"] {
+    margin-left: 10px;
+}
+
+.add_product label[for="category"] {
+    color: #fff;
+    font-size: 14px;
+}
+
+
+.add_product button[type="submit"] {
+    background-color: #FFEB00;
+    border: solid 1px #ac9e07;
+    color: #000;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add_product button[type="submit"]:hover {
+    background-color: #E5D600;
+}
 
 /* PAGE product */
 
@@ -307,6 +448,7 @@ footer {
     flex-direction: column;
     align-items: center;
     background-color: #B99470;
+    border: solid 1px #644f3a;
     color: white;
     text-shadow: 3px 2px 2px rgba(0,0,0,0.31);
     padding: 20px;
@@ -315,8 +457,11 @@ footer {
 }
 
 .detail img{
-    width: 500px;
+    width: 700px;
     height: 500px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border: solid 1px #644f3a;
+    border-radius: 15px;
 }
 
 
@@ -398,7 +543,8 @@ footer {
     gap: 30px;
 }
 .cart{
-    background-color: #c5460bc9;
+    border: solid 5px #009900;
+    background-color: #B99470;
     color: white;
     padding:20px;
     width: 80%;
@@ -415,7 +561,8 @@ footer {
     justify-content: space-evenly;
     gap: 40px;
     margin-top: 20px;
-    background-color: #63330c;
+    border: solid 1px #009900;
+    background-color: #5a5a5a69;
     padding: 20px;
     border-radius: 10px;
 
@@ -424,7 +571,8 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #09bbbb91;
+    border: solid 5px #009900;
+    background-color: #B99470;
     color: white;
     padding:20px;
     width: 80%;
@@ -432,16 +580,14 @@ footer {
     border-radius: 10px;
 }
 .form-container {
-    background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 320px;
     text-align: center;
 }
 
 .form-container h2 {
-    color: #09bbbb;
+    color: #009900;
     margin-bottom: 20px;
 }
 
@@ -471,7 +617,7 @@ footer {
 .form-container input[type="password"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #09bbbb91;
+    border: 1px solid #009900;
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
@@ -481,13 +627,13 @@ footer {
 .form-container input[type="text"]:focus,
 .form-container input[type="email"]:focus,
 .form-container input[type="password"]:focus {
-    border-color: #088a8a;
+    border-color: #009900;
     box-shadow: 0 0 5px rgba(9, 187, 187, 0.5);
 }
 
 /* Bouton de soumission */
 .form-container .submit-btn {
-    background-color: #09bbbb;
+    background-color: #009900;
     color: white;
     border: none;
     padding: 12px;
@@ -499,10 +645,11 @@ footer {
 }
 
 .form-container .submit-btn:hover {
-    background-color: #088a8a;
+    background-color: #026302;
 }
 .history{
-    background-color: #c5da0aa1;
+    border: solid 5px #009900;
+    background-color: #B99470;
     color: white;
     padding:20px;
     width: 80%;
@@ -514,6 +661,9 @@ footer {
     justify-content: space-evenly;
     gap: 40px;
     margin-top: 20px;
+    padding: 10px;
+    border: solid 1px #009900;
+    background-color: #5a5a5a69;
     
 }
 

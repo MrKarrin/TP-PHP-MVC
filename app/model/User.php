@@ -5,14 +5,14 @@ class User
     public function __construct() {}
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public function getAllUser()
+    public function GetUSerByEmail($email)
     {
         $pdo = Database::connect();
-        $sql = 'SELECT * FROM user';
+        $sql = 'SELECT * FROM user WHERE email = :email';
         $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-        $alluser = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $alluser;
+        $stmt->execute(['email' => $email]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $user;
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,7 +36,7 @@ class User
             'name' => $name,
             'email' => $email,
             'password' => $password
-            
+
         ]);
     }
 
@@ -62,4 +62,3 @@ class User
         ]);
     }
 }
-

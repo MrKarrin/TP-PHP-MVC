@@ -21,8 +21,8 @@ class Router
                 $selectaproduct->selectProduct($id);
                 break;
             case 'dashboard':
-                $selectallproduct = new ProductController();
-                $selectallproduct->selectAllDashboard();
+                $selectallproduct = new UserController();
+                $selectallproduct->SessionUser();
                 break;
             case 'edit':
                 $editproduct = new ProductController();
@@ -32,13 +32,19 @@ class Router
                 $userlogin = new UserController();
                 $userlogin->UserLogin();
                 break;
+                case 'disconnect':
+                    $userlogin = new UserController();
+                    $userlogin->UserDisconnect();
+                   break;
             case 'register':
                 require_once("./app/views/register.php");
                 break;
             case 'orders':
                 require_once("./app/views/profile.php");
                 break;
-
+            case 'add':
+                 require_once("./app/views/add.php");
+                break;
 
 
             default:
