@@ -64,8 +64,14 @@ class UserController
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
+        session_regenerate_id();
+        if ($_SESSION['login'] !== true) {
+            header('location: ./index.php');
+        }
+        if ($_SESSION['login'] === true) {
+            session_regenerate_id();
+        }
         $user_id = $_SESSION['user_id'];
-        return $user_id;
-        require "./app/views/order.php";
+        require "./app/views/profile.php";
     }
 }
